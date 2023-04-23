@@ -6,12 +6,12 @@ const postDatas = [
   },
   {
     id: 2,
-    title: "Ne icin yasiyorsun?",
+    title: "ORmanda ikinci gün",
     text: "Insan bu tarz soruları daha cok sormalı kendine yoksa bir bakmıs bobin sıralıyor :) 'bobin siralama' cok ayrı bir konu, 2 blog yazısı falan gerekebilir lol",
   },
   {
     id: 3,
-    title: "Rutin vs Motivasyon",
+    title: "Ormanda üçüncü gün",
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti dolor qui excepturi dicta itaque. Similique, doloremque eos qui debitis dolorem voluptatum consequuntur sint nesciunt modi aliquid, sapiente, labore iusto vel.",
   },
   {

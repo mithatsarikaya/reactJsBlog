@@ -2,3 +2,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+#root{
+  margin: 10px;
+}

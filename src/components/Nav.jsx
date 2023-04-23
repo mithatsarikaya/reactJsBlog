@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Nav() {
   return (
     <nav>
@@ -8,8 +10,12 @@ export default function Nav() {
         placeholder="Check if we have related blog, most probably we dont ^^"
       />
       <ul>
-        <li>Home</li>
-        <li>Post</li>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/new">
+          <li>Post</li>
+        </Link>
         <li>About</li>
       </ul>
     </nav>

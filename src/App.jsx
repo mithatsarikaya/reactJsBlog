@@ -6,11 +6,11 @@ import data from "./data";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import NewPost from "./components/NewPost";
+import ShowPost from "./components/ShowPost";
 
 function App() {
   const [postDatas, setPostDatas] = useState(data);
-  const newIdForNewPost = postDatas[postDatas.length - 1].id + 1;
-  console.log(newIdForNewPost);
+  const newIdForNewPost = postDatas[postDatas.length - 1]?.id + 1;
 
   return (
     <>
@@ -25,6 +25,12 @@ function App() {
               setPostDatas={setPostDatas}
               newIdForNewPost={newIdForNewPost}
             />
+          }
+        />
+        <Route
+          path="/:id"
+          element={
+            <ShowPost postDatas={postDatas} setPostDatas={setPostDatas} />
           }
         />
       </Routes>

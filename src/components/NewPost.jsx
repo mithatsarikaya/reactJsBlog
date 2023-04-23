@@ -12,7 +12,6 @@ export default function NewPost({ setPostDatas, newIdForNewPost }) {
     text: "",
   });
 
-  console.log(newPost);
   const handleChange = (e) => {
     setNewPost((prevPost) => ({
       ...prevPost,
