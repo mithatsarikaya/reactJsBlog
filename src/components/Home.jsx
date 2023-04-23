@@ -1,7 +1,6 @@
 import Posts from "./Posts";
 
 export default function Home({ postDatas }) {
-  console.log(postDatas);
   return (
     <>
       {postDatas.length !== 0 ? (

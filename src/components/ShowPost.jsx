@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 export default function ShowPost({ postDatas, setPostDatas }) {
   const { id } = useParams();
   const post = postDatas.find((postData) => postData.id.toString() === id);
@@ -21,6 +22,9 @@ export default function ShowPost({ postDatas, setPostDatas }) {
         {/* {post.text.length > 100 ? `${post.text.slice(0, 100)}...` : post.text} */}
         {post.text}
       </p>
+      <Link to={`/edit/${post.id}`}>
+        <button>Edit</button>
+      </Link>
       <button onClick={handleDelete}>Delete</button>
     </>
   );

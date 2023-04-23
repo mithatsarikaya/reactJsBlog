@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import NewPost from "./components/NewPost";
 import ShowPost from "./components/ShowPost";
+import EditPost from "./components/EditPost";
 
 function App() {
   const [postDatas, setPostDatas] = useState(data);
@@ -31,6 +32,12 @@ function App() {
           path="/:id"
           element={
             <ShowPost postDatas={postDatas} setPostDatas={setPostDatas} />
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <EditPost postDatas={postDatas} setPostDatas={setPostDatas} />
           }
         />
       </Routes>
