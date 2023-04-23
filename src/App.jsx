@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Posts from "./components/Posts";
-import Footer from "./components/Footer";
 import data from "./data";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
 
 function App() {
   const [postDatas, setPostDatas] = useState(data);
@@ -12,7 +13,9 @@ function App() {
     <>
       <Header />
       <Nav />
-      <Posts postDatas={postDatas} />
+      <Routes>
+        <Route path="/" element={<Home postDatas={postDatas} />} />
+      </Routes>
       <Footer />
     </>
   );
