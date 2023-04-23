@@ -14,6 +14,11 @@ const postDatas = [
     title: "Rutin vs Motivasyon",
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti dolor qui excepturi dicta itaque. Similique, doloremque eos qui debitis dolorem voluptatum consequuntur sint nesciunt modi aliquid, sapiente, labore iusto vel.",
   },
+  {
+    id: 4,
+    title: "Nasıl yani",
+    text: "Bu 100 karekteri geçmeyen bir blog yazısıdır",
+  },
 ];
 
 export default postDatas;

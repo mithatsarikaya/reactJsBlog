@@ -3,9 +3,11 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Posts from "./components/Posts";
 import Footer from "./components/Footer";
-import postDatas from "./data";
+import data from "./data";
 
 function App() {
+  const [postDatas, setPostDatas] = useState(data);
+
   return (
     <>
       <Header />
