@@ -13,6 +13,10 @@ function App() {
   const [postDatas, setPostDatas] = useState(data);
   const newIdForNewPost = postDatas[postDatas.length - 1]?.id + 1;
 
+  fetch("http://localhost:3500/posts/2").then((result) =>
+    console.log(result.json())
+  );
+
   return (
     <>
       <Header />
