@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function EditPost({ postDatas, setPostDatas }) {
   const { id } = useParams();
   const post = postDatas.find((postData) => postData.id.toString() === id);
-
+  const url = "http://localhost:3500/posts/";
   const [editedPost, setEditedPost] = useState(post);
 
   const navigate = useNavigate();
@@ -23,6 +23,13 @@ export default function EditPost({ postDatas, setPostDatas }) {
         prevPostData.id.toString() === id ? editedPost : prevPostData
       )
     );
+    fetch(`${url}${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedPost),
+    });
     navigate("/");
   };
 
