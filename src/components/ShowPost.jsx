@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 export default function ShowPost({ postDatas, setPostDatas }) {
   const { id } = useParams();
   const post = postDatas.find((postData) => postData.id.toString() === id);
-
+  const url = "http://localhost:3500/posts/";
   const navigate = useNavigate();
 
   const handleDelete = (e) => {
@@ -12,6 +12,11 @@ export default function ShowPost({ postDatas, setPostDatas }) {
     setPostDatas((prevPostDatas) =>
       prevPostDatas.filter((prevPostData) => prevPostData.id.toString() !== id)
     );
+
+    fetch(`${url}${id}`, {
+      method: "DELETE",
+    });
+    console.log(`${url}${id}`);
     navigate("/");
   };
 
