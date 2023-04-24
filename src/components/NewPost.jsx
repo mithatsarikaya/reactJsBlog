@@ -22,6 +22,13 @@ export default function NewPost({ setPostDatas, newIdForNewPost }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setPostDatas((prevPostDatas) => [...prevPostDatas, newPost]);
+    fetch("http://localhost:3500/posts/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPost),
+    });
     navigate("/");
   };
 

@@ -1,5 +1,5 @@
 {
-    "posts" : [
+  "posts": [
     {
       "id": 1,
       "title": "Ormanda ilk gün",
@@ -19,7 +19,16 @@
       "id": 4,
       "title": "Nasıl yani",
       "text": "Bu 100 karekteri geçmeyen bir blog yazısıdır"
+    },
+    {
+      "id": 5,
+      "title": "fetch",
+      "text": "dont think so gonna work"
+    },
+    {
+      "id": 6,
+      "title": "fetch withoput async awaiy",
+      "text": "sdsdjkjsdakksad"
     }
   ]
-}  
-  
+}
