@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
@@ -10,12 +10,15 @@ import ShowPost from "./components/ShowPost";
 import EditPost from "./components/EditPost";
 
 function App() {
-  const [postDatas, setPostDatas] = useState(data);
+  const url = "http://localhost:3500/posts/";
+  const [postDatas, setPostDatas] = useState([]);
   const newIdForNewPost = postDatas[postDatas.length - 1]?.id + 1;
 
-  fetch("http://localhost:3500/posts/2").then((result) =>
-    console.log(result.json())
-  );
+  useEffect(() => {
+    fetch(url)
+      .then((result) => result.json())
+      .then((data) => setPostDatas(data));
+  }, []);
 
   return (
     <>
