@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BlogContext from "../context/BlogContext";
 
-export default function NewPost({ setPostDatas, newIdForNewPost }) {
+export default function NewPost() {
   //id title text
+
+  const { setPostDatas, newIdForNewPost } = useContext(BlogContext);
 
   const navigate = useNavigate();
 

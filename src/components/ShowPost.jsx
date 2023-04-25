@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom";
-import { useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { useContext } from "react";
+import BlogContext from "../context/BlogContext";
 
-export default function ShowPost({ postDatas, setPostDatas }) {
+export default function ShowPost() {
+  const { postDatas, setPostDatas } = useContext(BlogContext);
   const { id } = useParams();
   const post = postDatas.find((postData) => postData.id.toString() === id);
   const url = "http://localhost:3500/posts/";

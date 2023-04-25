@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import BlogContext from "../context/BlogContext";
 
-export default function EditPost({ postDatas, setPostDatas }) {
+export default function EditPost() {
+  const { postDatas, setPostDatas } = useContext(BlogContext);
   const { id } = useParams();
   const post = postDatas.find((postData) => postData.id.toString() === id);
   const url = "http://localhost:3500/posts/";
