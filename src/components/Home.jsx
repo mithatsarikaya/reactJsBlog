@@ -1,6 +1,9 @@
 import Posts from "./Posts";
+import { useContext } from "react";
+import BlogContext from "../context/BlogContext";
 
-export default function Home({ postDatas }) {
+export default function Home() {
+  const { postDatas } = useContext(BlogContext);
   return (
     <>
       {postDatas.length !== 0 ? (

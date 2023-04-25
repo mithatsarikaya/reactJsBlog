@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import NewPost from "./components/NewPost";
 import ShowPost from "./components/ShowPost";
 import EditPost from "./components/EditPost";
+import { BlogContextProvider } from "./context/BlogContext";
 
 function App() {
   const url = "http://localhost:3500/posts/";
@@ -22,33 +23,35 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home postDatas={postDatas} />} />
-        <Route
-          path="/new"
-          element={
-            <NewPost
-              setPostDatas={setPostDatas}
-              newIdForNewPost={newIdForNewPost}
-            />
-          }
-        />
-        <Route
-          path="/:id"
-          element={
-            <ShowPost postDatas={postDatas} setPostDatas={setPostDatas} />
-          }
-        />
-        <Route
-          path="/edit/:id"
-          element={
-            <EditPost postDatas={postDatas} setPostDatas={setPostDatas} />
-          }
-        />
-      </Routes>
-      <Footer />
+      <BlogContextProvider>
+        <Header />
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home postDatas={postDatas} />} />
+          <Route
+            path="/new"
+            element={
+              <NewPost
+                setPostDatas={setPostDatas}
+                newIdForNewPost={newIdForNewPost}
+              />
+            }
+          />
+          <Route
+            path="/:id"
+            element={
+              <ShowPost postDatas={postDatas} setPostDatas={setPostDatas} />
+            }
+          />
+          <Route
+            path="/edit/:id"
+            element={
+              <EditPost postDatas={postDatas} setPostDatas={setPostDatas} />
+            }
+          />
+        </Routes>
+        <Footer />
+      </BlogContextProvider>
     </>
   );
 }
